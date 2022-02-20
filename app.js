@@ -11,7 +11,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 const cors = require('cors');
 
 const session = require('express-session');
@@ -130,7 +130,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(3000);
+    app.listen(PORT);
   })
   .catch(err => {
     console.log(err);
