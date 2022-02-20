@@ -27,9 +27,7 @@ const {
   ServerApiVersion
 } = require('mongodb');
 
-const MONGODB_URI = process.env.MONGODB_URL || `
-mongodb + srv: //azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority
-`;
+const MONGODB_URI = process.env.MONGODB_URL || `mongodb+srv://azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
 
 
 
