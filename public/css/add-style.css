@@ -10,14 +10,13 @@
   object-fit: cover;
   object-position: 0% 70%;
 }
-
+img {
+  max-width: 100%;
+}
 .product-item {
 
 }
-.card_img img {
-  max-width: 30rem;
-  max-height: 30rem;
-}
+
 .h1-title {
   display: none;
 }
@@ -112,5 +111,9 @@
 .orders > :nth-child(odd) {
   background-color: var(--light);
   border-radius: 3px;
+}
+.card_img img {
+  max-width: 30rem;
+  max-height: 30rem;
 }
 }
