@@ -1,0 +1,21 @@
+<script src="/js/main.js"></script>
+
+</body>
+<footer>
+  <div class="footer">
+  &copy;<span id="currentyear"></span> | Ashley Zufelt
+  </div>
+</footer>
+
+    <script>
+      const date = new Date();
+const options = {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+};
+document.querySelector("#currentyear").innerHTML = date.getFullYear();
+    </script>
+
+</html>

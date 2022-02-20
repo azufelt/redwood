@@ -1,0 +1,19 @@
+<form action="/cart" method="post" class="form-details">
+  <!-- <ul>
+    <li>
+      <label
+        ><input type="radio" name="size" value="large" /> $85.00
+        <span>24"x24"</span></label
+      >
+    </li>
+    <li>
+      <label
+        ><input type="radio" name="size" value="small" /> $65.00
+        <span>12"x12"</span></label
+      >
+    </li>
+  </ul> -->
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+  <button class="btn" type="submit">Add to Cart</button>
+  <input type="hidden" name="productId" value="<%= product._id %>" />
+</form>
