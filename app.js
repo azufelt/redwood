@@ -27,22 +27,27 @@ const {
   ServerApiVersion
 } = require('mongodb');
 
-const MONGODB_URI = `mongodb+srv://azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
-const client = new MongoClient(MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverApi: ServerApiVersion.v1
-});
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+const MONGODB_URI = process.env.MONGODB_URL || `
+mongodb + srv: //azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority
+`;
 
 
-// process.env.MONGODB_URL || `
-// mongodb + srv: //azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority
-// `;
+
+
+// `mongodb+srv://azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
+// const client = new MongoClient(MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   serverApi: ServerApiVersion.v1
+// });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
+
+
+
 
 const app = express();
 const store = new MongoDBStore({
