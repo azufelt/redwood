@@ -1,1 +1,124 @@
-[{"id":"123245","title":"A Book","imageUrl":"https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg","description":"This is an awesome book!","price":"19"},{"id":"0.41607315815753076","title":"fasfd","imageUrl":"fdasfs","description":"fadsfads","price":"12"}]
+
+[
+  {
+    "_id": "new ObjectId("623e00883db96e3a60681681")",
+    "title": "'This Is Us'",
+    "price": 75,
+    "description": "'Each moment of everyday adds up to create a whole story. And each family creates a unique one! Showcase this special sign as a reminder to enjoy each little moment, they are the building blocks of the story YOU are creating!\r\n' +
+      '12” x 24”'",
+    "imageUrl": "'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FIMG_3338-Edit.jpg'",
+    "userId": "new ObjectId("623dfb18d001f3e6fe813747")",
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e00c93db96e3a60681687"),
+    "title": 'Pray Always',
+    "price": 75,
+    "description": 'Bring a spiritual reminder to your home with this beautiful sign. One of the greatest reminders we can offer our families when life gives us too much is that we need not worry —as we can always kneel in prayer. Our hearts can be filled and our spirits calmed, our weaknesses strengthened and our family relationships reinforced.',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2Fkneel.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e01073db96e3a6068168d"),
+    "title": 'You & Me',
+    "price": 85,
+    "description": 'My favorite place to be. There is no limit to the amount of reminders we can have that we love the people around us. And that we love them! Adorable addition to wedding décor, a calm master-retreat, or even a spunky addition for a single dog-parent! Any way you choose to display this beautiful birch Redwood Design, your companionship will be your focus.\r\n' +
+      '24” x 24”',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2Fcrop%20IMG_3345-Edit.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e012f3db96e3a60681693"),
+    "title": 'Lighten Their Load',
+    "price": 85,
+    "description": "Give the decor in your home depth and meaning by adding this sign to your walls. Your family will appreciate this daily reminder that they don't have to carry the load alone: you can support one another through the good times and through the tough stuff. We can carry our load with grace and when it's too heavy to bare alone we can lay our burdens down.\r\n" +
+      '24” x 24”',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2Fload.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e01673db96e3a60681699"),
+    "title": 'All Your Love',
+    "price": 15,
+    "description": 'Through small acts of kindness is our love for one another shown. Let a Single Heart sign be your daily reminder for the love you have for one another. A great accompaniment to a farmhouse shelf display, home wall collage, or even your work desk.\r\n' +
+      '4" x 4"',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FIMG_3341.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e01923db96e3a6068169f"),
+    "title": 'Farm Fresh',
+    "price": 25,
+    "description": 'Does it get any more fresh than straight from the farm? This is a perfect addition to any farmhouse kitchen, or in a fun twist, as part of a simple farmhouse nursery!\r\n' +
+      '4" x 12"',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2Ffrarm%20fresh.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e01bf3db96e3a606816a5"),
+    "title": 'Write Here!',
+    "price": 85,
+    "description": 'Make lists, write menus, keep schedules, draw pictures. Anything you can dream up a chalkboard will bring to life. Let it be the center of your home command station and keep everything on track —even the occasional love note!\r\n' +
+      '\r\n' +
+      '24” x 24”',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FIMG_3357.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e02013db96e3a606816ab"),
+    "title": 'Be Kind',
+    "price": 65,
+    "description": 'Of all the things we want our children to be, we want them to Be Kind. Give them a simple, daily reminder to live up to their potential with this beautiful Redwood Design sign made of birch. It’s perfect for a dresser-top decoration or as an addition to a wall display.\r\n' +
+      '\r\n' +
+      '12" x 12"',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FBe%20Kind.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e022c3db96e3a606816b1"),
+    "title": 'Love Wins',
+    "price": 65,
+    "description": 'Love is the special days, the anniversaries, the every days, the ordinaries. Love is fancy, love wears pajamas, love is hugs, love is being kind. Don’t save the “L” word for a special occasion, tell them everyday that you love them. Give them a reminder of how much they are loved by including this Redwood Design in your everyday farmhouse decor!\r\n' +
+      '\r\n' +
+      '12” x 24”',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FWEB%20480%20x%20315%20IMG_3340.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e02583db96e3a606816b7"),
+    "title": 'Search Together',
+    "price": 85,
+    "description": 'Every home and family is unique. Let your love for being yourself show —front and center! This wonderful word search chalkboard will entertain guests as they search to find the words that represent the love and fun your family has when they are together! Use REAL chalk to find and erase words over and over. Made of beautiful birch wood, (Not magnetic.)\r\n' +
+      '\r\n' +
+      '24” x 24”',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FWordsearch%20chalk%20board.jpg',
+    "userId": "new ObjectId("623dfb18d001f3e6fe813747")",
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e02903db96e3a606816be"),
+    "title": 'THIS IS ME',
+    "price": 85,
+    "description": "'Coming Soon!'",
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FBrave.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  },
+  {
+    "_id": new ObjectId("623e02c93db96e3a606816c8"),
+    "title": 'FOREVER HEARTS',
+    "price": 45,
+    "description": "'Coming Soon!',
+    "imageUrl": 'https://cdn.glitch.me/7d3ba884-d0fe-47e0-9570-616ee3208241%2FIMG_3339.jpg',
+    "userId": new ObjectId("623dfb18d001f3e6fe813747"),
+    "__v": 0
+  }
+]
