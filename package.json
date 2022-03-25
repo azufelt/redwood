@@ -29,6 +29,9 @@
   },
   "author": "Ashley Zufelt",
   "license": "ISC",
+  "engines": {
+    "node": "0.10.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/azufelt/redwood.git"
