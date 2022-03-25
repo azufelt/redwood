@@ -4,20 +4,26 @@ require('dotenv').config()
 const username = process.env.MONGODB_USERNAME;
 const password = process.env.MONGO_PASSWORD;
 
-
+//required dependencies
 const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+//listen PORT
 const PORT = process.env.PORT || 5000;
-const cors = require('cors');
 
+//Session and DB 
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
+
+const cors = require('cors');
 const csrf = require('csurf');
 const flash = require('connect-flash');
+const app = express();
+
+const MONGODB_URI = `mongodb+srv://azufelt:redwoodpass@redwood-design-shop.hmyjy.mongodb.net/redwood-design?retryWrites=true&w=majority`;
 
 
 const errorController = require('./controllers/error');
@@ -27,40 +33,22 @@ const {
   ServerApiVersion
 } = require('mongodb');
 
-const MONGODB_URI = process.env.MONGODB_URL || `mongodb+srv://azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
 
+//routes
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+const authRoutes = require('./routes/auth');
 
-
-
-// `mongodb+srv://azufelt:${password}@redwood-design-shop.2u2we.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
-// const client = new MongoClient(MONGODB_URI, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   serverApi: ServerApiVersion.v1
-// });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
-
-
-
-const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions'
 });
 const csrfProtection = csrf();
 
+
+// Make requests
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-
-
-const adminRoutes = require('./routes/admin');
-const shopRoutes = require('./routes/shop');
-const authRoutes = require('./routes/auth');
 
 const corsOptions = {
   origin: "https://redwood-design-shop.herokuapp.com/",
@@ -72,6 +60,7 @@ const options = {
   family: 4
 };
 
+//parse json body of the request
 app.use(bodyParser.urlencoded({
   extended: false
 }));
@@ -87,6 +76,7 @@ app.use(
 app.use(csrfProtection);
 app.use(flash());
 
+//authenticate user
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
   res.locals.csrfToken = req.csrfToken();
@@ -111,6 +101,8 @@ app.use((req, res, next) => {
     });
 });
 
+
+// Using our routes as defined.
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
