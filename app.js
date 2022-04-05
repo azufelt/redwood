@@ -1,6 +1,4 @@
-require('dotenv').config({
-  debug: true
-});
+require('dotenv').config();
 const path = require('path');
 
 // const SECRET_KEY = process.env.EMAIL_API_KEY;
@@ -24,7 +22,7 @@ const csrf = require('csurf');
 const flash = require('connect-flash');
 const app = express();
 
-const MONGODB_URI = `mongodb+srv://${username}:${password}@redwood-design-shop.hmyjy.mongodb.net/redwood-design?retryWrites=true&w=majority`;
+const MONGODB_URI = process.env.MONGODB_URL
 
 
 const errorController = require('./controllers/error');
@@ -85,7 +83,6 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  // throw new Error('Sync Dummy');
   if (!req.session.user) {
     return next();
   }
@@ -116,7 +113,7 @@ app.use((error, req, res, next) => {
   res.status(500).render('500', {
     pageTitle: 'Error!',
     path: '../500',
-    isAuthenticated: req.session.isLoggedIn
+    // isAuthenticated: req.session.isLoggedIn
   });
 });
 
