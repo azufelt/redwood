@@ -123,7 +123,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(PORT);
+    app.listen(process.env.PORT || 5000);
   })
   .catch(err => {
     console.log(err);
