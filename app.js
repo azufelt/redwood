@@ -22,7 +22,7 @@ const csrf = require('csurf');
 const flash = require('connect-flash');
 const app = express();
 
-const MONGODB_URI = `mongodb+srv://redwood:${password}@redwood-design-shop.hmyjy.mongodb.net/redwood-design?retryWrites=true&w=majority`;
+const MONGODB_URI = `mongodb+srv://redwood:mypassword@redwood-design-shop.hmyjy.mongodb.net/redwood-design?retryWrites=true&w=majority`;
 
 
 const errorController = require('./controllers/error');
