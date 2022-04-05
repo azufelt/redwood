@@ -1,10 +1,6 @@
 require('dotenv').config();
 const path = require('path');
 
-// const SECRET_KEY = process.env.EMAIL_API_KEY;
-// const username = process.env.MONGODB_USERNAME;
-// const password = process.env.MONGODB_PASSWORD;
-
 //required dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -50,7 +46,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const corsOptions = {
-  origin: process.env.HEROKU_URL,
+  origin: 'https://redwood-design.herokuapp.com/',
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));

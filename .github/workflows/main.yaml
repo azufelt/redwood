@@ -15,3 +15,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "redwood-design-shop" #Must be unique in Heroku
           heroku_email: "ashley.zufelt@gmail.com"
+        env:
+          NODE_ENV: production
+          SECRET_KEY: ${{secrets.MONGODB_URL}}
