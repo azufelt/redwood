@@ -2,8 +2,8 @@ require('dotenv').config();
 const path = require('path');
 
 // const SECRET_KEY = process.env.EMAIL_API_KEY;
-const username = process.env.MONGODB_USERNAME;
-const password = process.env.MONGODB_PASSWORD;
+// const username = process.env.MONGODB_USERNAME;
+// const password = process.env.MONGODB_PASSWORD;
 
 //required dependencies
 const express = require('express');
@@ -22,7 +22,7 @@ const csrf = require('csurf');
 const flash = require('connect-flash');
 const app = express();
 
-const MONGODB_URI = `mongodb+srv://redwood:${password}@redwood-design-shop.hmyjy.mongodb.net/redwood-design?retryWrites=true&w=majority`;
+const MONGODB_URI = process.env.MONGODB_URL;
 
 
 const errorController = require('./controllers/error');
@@ -50,7 +50,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const corsOptions = {
-  origin: "https://redwood-design.herokuapp.com/",
+  origin: process.env.HEROKU_URL,
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
@@ -118,12 +118,10 @@ app.use((error, req, res, next) => {
 });
 
 
-
-
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(process.env.PORT || 5000);
+    app.listen(PORT);
   })
   .catch(err => {
     console.log(err);
