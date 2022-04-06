@@ -115,9 +115,14 @@ app.use((error, req, res, next) => {
 
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  })
   .then(result => {
     app.listen(process.env.PORT, '0.0.0.0');
+    console.log("connection successful");
   })
   .catch(err => {
     console.log(err);
