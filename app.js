@@ -21,11 +21,11 @@ const cors = require('cors');
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const app = express();
-// const MONGODB_URL = `mongodb+srv://herokuAdmin:${PASSWORD}@redwood.akcwx.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
 
-const MONGODB_URL = `mongodb+srv://herokuAdmin:${PASSWORD}@redwood-design-shop.hmyjy.mongodb.net/redwood-design?retryWrites=true&w=majority`;
 
-const MONGODB_URI = `process.env.${MONGODB_URL}`;
+const MONGODB_URL = `mongodb+srv://redwood:${PASSWORD}@redwood-design-shop.hmyjy.mongodb.net/redwood-design?retryWrites=true&w=majority`;
+
+const MONGODB_URI = process.env.MONGODB_URL;
 
 
 const errorController = require('./controllers/error');
@@ -42,7 +42,7 @@ const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
 const store = new MongoDBStore({
-  uri: MONGODB_URL,
+  uri: MONGODB_URI,
   databaseName: 'redwood',
   collection: 'sessions'
 });
@@ -125,9 +125,9 @@ app.use((error, req, res, next) => {
 
 
 mongoose
-  .connect(MONGODB_URI, options)
+  .connect(MONGODB_URL)
   .then(result => {
-    app.listen(process.env.PORT, '0.0.0.0');
+    app.listen(PORT)
     console.log("connection successful");
   })
   .catch(err => {
