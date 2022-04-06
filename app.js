@@ -6,6 +6,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+//dotenv
+const USER = process.env.MONGODB_USERNAME
+const PASSWORD = process.env.MONGODB_PASSWORD
+
 //listen PORT
 const PORT = process.env.PORT || 5000;
 
@@ -17,8 +21,9 @@ const cors = require('cors');
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const app = express();
+const MONGODB_URL = `mongodb+srv://${USER}:${PASSWORD}@redwood.akcwx.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
 
-const MONGODB_URI = 'process.env.MONGODB_URL';
+const MONGODB_URI = `process.env.${MONGODB_URL}`;
 
 
 const errorController = require('./controllers/error');
