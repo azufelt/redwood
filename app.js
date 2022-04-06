@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //dotenv
-const USER = process.env.MONGODB_USERNAME
+// const USER = process.env.MONGODB_USERNAME
 const PASSWORD = process.env.MONGODB_PASSWORD
 
 //listen PORT
@@ -40,7 +40,7 @@ const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
 const store = new MongoDBStore({
-  uri: `mongodb+srv://herokuAdmin:${PASSWORD}@redwood.akcwx.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`,
+  uri: MONGODB_URL,
   databaseName: 'redwood',
   collection: 'sessions'
 });
@@ -58,6 +58,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
   family: 4
 };
 
@@ -121,11 +123,7 @@ app.use((error, req, res, next) => {
 
 
 mongoose
-  .connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-  })
+  .connect(MONGODB_URI, options)
   .then(result => {
     app.listen(process.env.PORT, '0.0.0.0');
     console.log("connection successful");
