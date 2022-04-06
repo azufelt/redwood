@@ -18,7 +18,7 @@ const csrf = require('csurf');
 const flash = require('connect-flash');
 const app = express();
 
-const MONGODB_URI = process.env.MONGODB_URL;
+const MONGODB_URI = 'process.env.MONGODB_URL';
 
 
 const errorController = require('./controllers/error');
