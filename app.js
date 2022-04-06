@@ -43,10 +43,7 @@ const store = new MongoDBStore({
   uri: `mongodb+srv://herokuAdmin:${PASSWORD}@redwood.akcwx.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`,
   databaseName: 'redwood',
   collection: 'sessions'
-}.catch(err => {
-  console.log('This is getting annoying')
-  console.log(err);
-}));
+});
 const csrfProtection = csrf();
 
 
