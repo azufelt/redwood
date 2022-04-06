@@ -17,4 +17,4 @@ jobs:
           heroku_email: "redwooddesignco@gmail.com"
         env:
           NODE_ENV: production
-          SECRET_KEY: ${{secrets.MONGODB_URL}}
+          SECRET_KEY: ${{secrets.MONGODB_PASSWORD}}

@@ -21,7 +21,7 @@ const cors = require('cors');
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const app = express();
-const MONGODB_URL = `mongodb+srv://${USER}:${PASSWORD}@redwood.akcwx.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
+const MONGODB_URL = `mongodb+srv://herokuAdmin:${PASSWORD}@redwood.akcwx.mongodb.net/redwood-design-shop?retryWrites=true&w=majority`;
 
 const MONGODB_URI = `process.env.${MONGODB_URL}`;
 
